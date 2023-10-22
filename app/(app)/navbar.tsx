@@ -1,5 +1,5 @@
 import Link from "next/link";
-import logo from "../public/logo-bulb-center.svg";
+import logo from "../../public/logo-bulb-center.svg";
 import Image from "next/image";
 
 const Navbar = () => {
@@ -9,7 +9,8 @@ const Navbar = () => {
         <Image src={logo} alt="KBH Creative logo" className="h-full w-min" />
       </Link>
       <div className="grow" />
-      <nav className="h-full flex items-center">
+      <nav className="h-full flex items-center gap-6">
+        <Link href="/services">Services</Link>
         <Link href="/contact">Contact</Link>
       </nav>
     </div>

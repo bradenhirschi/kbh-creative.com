@@ -21,6 +21,10 @@ export const POST = async (request: Request) => {
 
   const { firstName, lastName, userEmail, message } = requestBody;
 
+  if (!process.env.NEXT_PUBLIC_RESEND_API_KEY) {
+    return new Response(null, { status: 500 });
+  }
+
   const resend = new Resend(process.env.NEXT_PUBLIC_RESEND_API_KEY);
 
   const email: ResendEmail = {

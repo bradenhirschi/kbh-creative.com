@@ -30,7 +30,3 @@ h4 {
 #main-navbar li {
   @apply text-sm font-medium tracking-wide;
 }
-
-p {
-  @apply text-sm font-medium tracking-wide;
-}

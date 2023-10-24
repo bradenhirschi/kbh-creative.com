@@ -4,16 +4,23 @@ import Image from "next/image";
 
 const Navbar = () => {
   return (
-    <div className="flex flex-row py-4 px-44 h-[80px] bg-stone-200 border-b-black border-b">
+    <nav className="flex flex-row py-4 px-44 h-[80px] bg-stone-200 border-b-black border-b">
       <Link href="/">
         <Image src={logo} alt="KBH Creative logo" className="h-full w-min" />
       </Link>
       <div className="grow" />
-      <nav className="h-full flex items-center gap-6">
-        <Link href="/services">Services</Link>
-        <Link href="/contact">Contact</Link>
-      </nav>
-    </div>
+      <ul id="main-navbar" className="h-full flex items-center gap-8">
+        <li>
+          <Link href="/services">Services</Link>
+        </li>
+        <li>
+          <Link href="/blog">Blog</Link>
+        </li>
+        <li>
+          <Link href="/contact">Contact</Link>
+        </li>
+      </ul>
+    </nav>
   );
 };
 

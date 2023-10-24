@@ -19,10 +19,18 @@ h4 {
 }
 
 .stretched-heading {
-  @apply text-6xl uppercase font-bold tracking-wide;
+  @apply text-6xl uppercase font-semibold tracking-wide;
   display: inline-block;
 }
 
 .btn {
-  @apply bg-lime-700/30 p-5 rounded-full hover:bg-lime-700/60;
+  @apply flex font-medium flex-row items-center bg-lime-700/30 p-5 rounded-full hover:bg-lime-700/60;
+}
+
+#main-navbar li {
+  @apply text-sm font-medium tracking-wide;
+}
+
+p {
+  @apply text-sm font-medium tracking-wide;
 }

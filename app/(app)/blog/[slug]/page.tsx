@@ -36,7 +36,7 @@ export const generateMetadata = async ({ params }: Props) => {
     title: `${postMetadata.title} | KBH Creative`,
     openGraph: {
       images: [
-        builder.image(postMetadata.mainImage).width(900).height(450).url(),
+        builder.image(postMetadata.mainImage).width(1600).height(900).url(),
       ],
     },
   };

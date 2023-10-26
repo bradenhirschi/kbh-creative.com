@@ -15,8 +15,8 @@ const BlogPage = async () => {
   const posts = await sanityFetch<SanityDocument[]>({ query: postsQuery });
 
   return (
-    <main className="px-44 grid grid-cols-4">
-      <div className="col-span-3">
+    <main className="px-responsive grid md:grid-cols-4">
+      <div className="md:col-span-3">
         <LatestPost post={posts[0]} />
       </div>
       <BlogSidebar currentPostSlug={posts[0].slug.current} />

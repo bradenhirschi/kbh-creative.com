@@ -4,7 +4,7 @@ import Image from "next/image";
 
 const Navbar = () => {
   return (
-    <nav className="flex flex-row py-4 px-44 h-[80px] bg-stone-200 border-b-black border-b">
+    <nav className="flex flex-row py-4 px-responsive h-[80px] bg-stone-200 border-b-black border-b">
       <Link href="/">
         <Image src={logo} alt="KBH Creative logo" className="h-full w-min" />
       </Link>

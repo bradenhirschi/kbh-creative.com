@@ -43,7 +43,7 @@ const BlogPostPage = async ({ params }: Props) => {
   const post: SanityDocument = await getPost(params);
 
   return (
-    <main className="px-44 grid grid-cols-4">
+    <main className="px-responsive grid grid-cols-4">
       <div className="col-span-3">
         <BlogPost post={post} />
       </div>

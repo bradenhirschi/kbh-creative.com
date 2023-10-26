@@ -28,22 +28,49 @@ const BlogSidebar = async ({
     <aside className="border-r border-stone-200">
       <div className="grid grid-cols-1 divide-y divide-stone-200">
         <h3 className="p-4">Recent in the Blog</h3>
-        {posts.map((post) => (
+        {/* Most recent post */}
+        <Link
+          key={posts[0]._id}
+          href={`/blog/${posts[0].slug.current}`}
+          className="p-2 hover:bg-stone-200"
+        >
+          {posts[0].mainImage ? (
+            <Image
+              className="rounded-md sidebar-image"
+              src={builder
+                .image(posts[0].mainImage)
+                .width(320)
+                .height(180)
+                .url()}
+              alt={posts[0].mainImage.alt}
+              width={320}
+              height={180}
+            />
+          ) : null}
+          <h5 className="line-clamp-3">{posts[0].title}</h5>
+        </Link>
+        {/* List of next most recent posts */}
+        {posts.splice(1).map((post) => (
           <Link
             key={post._id}
             href={`/blog/${post.slug.current}`}
-            className="p-4 hover:bg-stone-200"
+            className="h-[100px] p-2 hover:bg-stone-200 grid grid-cols-2"
           >
-            <h4>{post.title}</h4>
-            {post.mainImage ? (
-              <Image
-                className="w-full rounded-lg"
-                src={builder.image(post.mainImage).width(900).height(450).url()}
-                width={900}
-                height={450}
-                alt={post.mainImage.alt}
-              />
-            ) : null}
+            <div className="relative">
+              {post.mainImage ? (
+                <Image
+                  className="rounded-md sidebar-image"
+                  src={builder
+                    .image(post.mainImage)
+                    .width(500)
+                    .height(500)
+                    .url()}
+                  alt={post.mainImage.alt}
+                  fill
+                />
+              ) : null}
+            </div>
+            <p className="line-clamp-3">{post.title}</p>
           </Link>
         ))}
       </div>

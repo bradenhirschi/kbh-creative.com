@@ -13,40 +13,20 @@ const BlogPost = ({ post }: { post: SanityDocument }) => {
     post.categories?.map((category: any) => category.title) || [];
 
   return (
-    <article className="border-x border-stone-200 container prose prose-xl p-4">
-      {/* Post image and title */}
-      <div className="relative">
-        {post?.mainImage ? (
-          <Image
-            className="w-full rounded-lg"
-            src={builder.image(post.mainImage).width(3200).height(1800).url()}
-            width={3200}
-            height={1800}
-            alt={post.mainImage.alt}
-          />
-        ) : null}
-        {/* Alternate author information section over the image
-        <div className="absolute bottom-0 left-0 p-2 bg-white border border-stone-200">
-          <div className="flex flex-row items-center not-prose">
-            <Image
-              className="rounded-full mr-2"
-              src={builder
-                .image(post.author.image)
-                .width(300)
-                .height(300)
-                .url()}
-              width={30}
-              height={30}
-              alt={post.author.image.alt}
-            />
-            <h3 className="prose prose-xl">By {post.author.name}</h3>
-          </div>
-        </div>
-        */}
-      </div>
+    <section className="border-x border-stone-200 p-4">
+      {/* Post image */}
+      {post?.mainImage ? (
+        <Image
+          className="w-full rounded-lg"
+          src={builder.image(post.mainImage).width(3200).height(1800).url()}
+          width={3200}
+          height={1800}
+          alt={post.mainImage.alt}
+        />
+      ) : null}
 
       {/* Category chips */}
-      <div className="flex flex-row gap-2 mb-2">
+      <div className="flex flex-row gap-2 mt-4">
         {categories.map((category: string) => (
           <div key={category}>
             <CategoryChip category={category} />
@@ -55,7 +35,7 @@ const BlogPost = ({ post }: { post: SanityDocument }) => {
       </div>
 
       {/* Post title */}
-      <h1>{post.title}</h1>
+      <h1 className="blog-title">{post.title}</h1>
 
       {/* Author information */}
       <div className="flex flex-row items-center not-prose gap-3">
@@ -75,8 +55,10 @@ const BlogPost = ({ post }: { post: SanityDocument }) => {
       </div>
 
       {/* Post body */}
-      {post?.body ? <PortableText value={post.body} /> : null}
-    </article>
+      <div className="blog-article">
+        <PortableText value={post.body} />
+      </div>
+    </section>
   );
 };
 

@@ -18,13 +18,41 @@ h4 {
   @apply text-xl sm:text-2xl;
 }
 
+h4 {
+  @apply text-lg sm:text-xl;
+}
+
 .stretched-heading {
-  @apply text-6xl uppercase font-semibold tracking-wide;
+  @apply text-5xl sm:text-6xl uppercase font-semibold tracking-wide;
   display: inline-block;
 }
 
 .btn {
   @apply flex font-medium flex-row items-center bg-lime-700/30 p-5 rounded-full hover:bg-lime-700/60;
+}
+
+.px-responsive {
+  @apply px-4 sm:px-8 md:px-16 lg:px-24 xl:px-32;
+}
+
+.blog-title {
+  @apply font-bold my-6;
+}
+
+.stamp {
+  @apply absolute h-24 w-24 top-[-3rem] left-[-3rem] md:h-32 md:w-32 md:top-[-4rem] md:left-[-4rem] rounded-full;
+}
+
+.stamp img {
+  @apply h-12 w-12 md:h-20 md:w-20 pt-1;
+}
+
+.blog-article {
+  @apply prose prose-stone prose-sm lg:prose-lg xl:prose-xl max-w-none prose-headings:mt-6;
+}
+
+.sidebar-image {
+  object-fit: cover;
 }
 
 #main-navbar li {

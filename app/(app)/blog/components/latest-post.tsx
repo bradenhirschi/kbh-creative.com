@@ -15,9 +15,9 @@ const LatestPost = ({ post }: { post: SanityDocument }) => {
       {post?.mainImage ? (
         <Image
           className="w-full rounded-lg"
-          src={builder.image(post.mainImage).width(900).height(450).url()}
-          width={900}
-          height={450}
+          src={builder.image(post.mainImage).width(3200).height(1800).url()}
+          width={3200}
+          height={1800}
           alt={post.mainImage.alt}
         />
       ) : null}

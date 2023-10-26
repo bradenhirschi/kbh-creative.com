@@ -8,8 +8,8 @@ const HomePage = () => {
   return (
     <main>
       {/* Hero section */}
-      <section className="grid grid-cols-3 px-44 min-h-[calc(100vh-80px)]">
-        <div className="col-span-2 pr-20 py-12">
+      <section className="grid grid-cols-1 lg:grid-cols-3 px-4 lg:px-44 min-h-[calc(100vh-80px)]">
+        <div className="lg:col-span-2 pr-20 py-12">
           <h1 className="stretched-heading">Elevate Your</h1>
           <h1 className="stretched-heading text-right w-full mb-12">
             Online Presence
@@ -20,6 +20,7 @@ const HomePage = () => {
               src={typing}
               alt="Man smiling and typing on computer"
               priority
+              loading="eager"
             />
             <div className="absolute h-[120px] w-[120px] top-[-60px] left-[-60px] bg-stone-200 rounded-full" />
             <div className="absolute h-[120px] w-[120px] top-[-60px] left-[-60px] bg-lime-700/30 rounded-full flex items-center justify-center">

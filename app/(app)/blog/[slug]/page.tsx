@@ -24,7 +24,7 @@ const Page = async ({ params }: { params: any }) => {
       <div className="col-span-3">
         <BlogPost post={post} />
       </div>
-      <BlogSidebar currentPost={post} />
+      <BlogSidebar currentPostSlug={post.slug.current} />
     </main>
   );
 };

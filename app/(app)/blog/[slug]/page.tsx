@@ -1,18 +1,22 @@
 import { SanityClient, SanityDocument } from "@sanity/client";
 import BlogPost from "../components/post";
-import {
-  postMetadataQuery,
-  postPathsQuery,
-  postQuery,
-} from "@/sanity/lib/queries";
+import { postMetadataQuery, postPathsQuery } from "@/sanity/lib/queries";
 import { sanityFetch } from "@/sanity/lib/sanityFetch";
 import { client } from "@/sanity/lib/client";
 import imageUrlBuilder from "@sanity/image-url";
 import BlogSidebar from "../components/sidebar";
-import { revalidatePath } from "next/cache";
+import { getPost } from "@/utils/get-post";
 
 type Props = {
   params: { slug: string };
+};
+
+// Prepare Next.js to know which routes already exist
+export const generateStaticParams = async () => {
+  // Important, use the plain Sanity Client here
+  const posts = await client.fetch(postPathsQuery);
+
+  return posts;
 };
 
 // Builder to generate metadata image from URL
@@ -35,13 +39,8 @@ export const generateMetadata = async ({ params }: Props) => {
   };
 };
 
-const Page = async ({ params }: Props) => {
-  const post = await sanityFetch<SanityDocument>({
-    query: postQuery,
-    params: params,
-  });
-
-  revalidatePath("/");
+const BlogPostPage = async ({ params }: Props) => {
+  const post: SanityDocument = await getPost(params);
 
   return (
     <main className="px-44 grid grid-cols-4">
@@ -53,4 +52,4 @@ const Page = async ({ params }: Props) => {
   );
 };
 
-export default Page;
+export default BlogPostPage;

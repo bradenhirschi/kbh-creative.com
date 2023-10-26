@@ -13,6 +13,7 @@ const BlogSidebar = async ({
 }: {
   currentPostSlug: string | null;
 }) => {
+  /*
   let posts: SanityDocument[] = [];
 
   if (currentPostSlug) {
@@ -22,7 +23,9 @@ const BlogSidebar = async ({
     });
   } else {
     posts = await sanityFetch({ query: postsQuery });
-  }
+  }*/
+
+  const posts: SanityDocument[] = await sanityFetch({ query: postsQuery });
 
   return (
     <aside className="border-r border-stone-200">

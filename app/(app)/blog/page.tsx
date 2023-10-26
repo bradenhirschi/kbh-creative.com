@@ -19,7 +19,7 @@ const BlogPage = async () => {
       <div className="col-span-3">
         <LatestPost post={posts[0]} />
       </div>
-      <BlogSidebar currentPostSlug={null} />
+      <BlogSidebar currentPostSlug={posts[0].slug.current} />
       {/*
       {posts.map((post) => (
         <Link

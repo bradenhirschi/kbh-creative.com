@@ -2,7 +2,7 @@ import Link from "next/link";
 import Image from "next/image";
 import type { SanityDocument } from "@sanity/client";
 import { sanityFetch } from "@/sanity/lib/sanityFetch";
-import { postsQuery } from "@/sanity/lib/queries";
+import { postsExceptCurrentQuery, postsQuery } from "@/sanity/lib/queries";
 import { client } from "@/sanity/lib/client";
 import imageUrlBuilder from "@sanity/image-url";
 
@@ -13,7 +13,6 @@ const BlogSidebar = async ({
 }: {
   currentPostSlug: string | null;
 }) => {
-  /*
   let posts: SanityDocument[] = [];
 
   if (currentPostSlug) {
@@ -23,9 +22,7 @@ const BlogSidebar = async ({
     });
   } else {
     posts = await sanityFetch({ query: postsQuery });
-  }*/
-
-  const posts: SanityDocument[] = await sanityFetch({ query: postsQuery });
+  }
 
   return (
     <aside className="border-r border-stone-200">

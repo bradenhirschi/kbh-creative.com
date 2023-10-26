@@ -12,8 +12,6 @@ const BlogPost = ({ post }: { post: SanityDocument }) => {
   const categories =
     post.categories?.map((category: any) => category.title) || [];
 
-  console.log("from post.tsx");
-
   return (
     <article className="border-x border-stone-200 container prose prose-xl p-4">
       {/* Post image and title */}

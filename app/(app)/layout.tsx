@@ -6,6 +6,7 @@ import Footer from "./footer";
 export const metadata: Metadata = {
   title: "KBH Creative",
   description: "All your content creation needs",
+  metadataBase: new URL("https://kbh-creative.com"),
 };
 
 export default function RootLayout({

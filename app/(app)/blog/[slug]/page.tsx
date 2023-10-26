@@ -1,9 +1,18 @@
-import { SanityDocument } from "@sanity/client";
+import { SanityClient, SanityDocument } from "@sanity/client";
 import BlogPost from "../components/post";
-import { postPathsQuery, postQuery } from "@/sanity/lib/queries";
+import {
+  postMetadataQuery,
+  postPathsQuery,
+  postQuery,
+} from "@/sanity/lib/queries";
 import { sanityFetch } from "@/sanity/lib/sanityFetch";
 import { client } from "@/sanity/lib/client";
+import imageUrlBuilder from "@sanity/image-url";
 import BlogSidebar from "../components/sidebar";
+
+type Props = {
+  params: { slug: string };
+};
 
 // Prepare Next.js to know which routes already exist
 export const generateStaticParams = async () => {
@@ -13,10 +22,30 @@ export const generateStaticParams = async () => {
   return posts;
 };
 
-const Page = async ({ params }: { params: any }) => {
+// Builder to generate metadata image from URL
+const builder = imageUrlBuilder(client);
+
+// Dynamically generate metadata based on slug
+export const generateMetadata = async ({ params }: Props) => {
+  const postMetadata = await sanityFetch<SanityDocument>({
+    query: postMetadataQuery,
+    params: params,
+  });
+
+  return {
+    title: `${postMetadata.title} | KBH Creative`,
+    openGraph: {
+      images: [
+        builder.image(postMetadata.mainImage).width(900).height(450).url(),
+      ],
+    },
+  };
+};
+
+const Page = async ({ params }: Props) => {
   const post = await sanityFetch<SanityDocument>({
     query: postQuery,
-    params,
+    params: params,
   });
 
   return (

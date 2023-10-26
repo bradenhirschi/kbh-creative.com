@@ -40,6 +40,12 @@ export const postQuery = groq`*[_type == 'post' && slug.current == $slug][0]{
   body
 }`;
 
+// Get a single post's metadata by its slug
+export const postMetadataQuery = groq`*[_type == 'post' && slug.current == $slug][0]{
+  title,
+  mainImage,
+}`;
+
 // Get all post slugs
 export const postPathsQuery = groq`*[_type == "post" && defined(slug.current)][]{
     "params": { "slug": slug.current }

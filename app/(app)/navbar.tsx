@@ -10,7 +10,7 @@ const Navbar = () => {
       </Link>
       <div className="grow" />
       <ul id="main-navbar" className="h-full flex items-center gap-8">
-        <li>
+        <li className="hidden">
           <Link href="/services">Services</Link>
         </li>
         <li>

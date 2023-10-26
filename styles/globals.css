@@ -28,5 +28,5 @@ h4 {
 }
 
 #main-navbar li {
-  @apply text-sm font-medium tracking-wide;
+  @apply text-sm font-medium tracking-wide border-b-2 hover:border-lime-700/30;
 }

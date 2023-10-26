@@ -2,6 +2,7 @@ import { BsArrowRight } from "react-icons/bs";
 import typing from "../../../public/typing.jpg";
 import lightbulb from "../../../public/lightbulb.svg";
 import Image from "next/image";
+import Link from "next/link";
 
 const HomePage = () => {
   return (
@@ -41,14 +42,14 @@ const HomePage = () => {
             unique identity. Our expertise is your key to increased traffic and
             enhanced engagement
           </p>
-          <button className="btn gap-2">
+          <Link href="./contact" className="btn gap-2">
             Discover Our Services
             <BsArrowRight size={20} />
-          </button>
+          </Link>
         </div>
       </section>
-      <section className="py-4 bg-stone-200 border-y border-black"></section>
-      <section className="py-4"></section>
+      <section className="hidden py-4 bg-stone-200 border-y border-black"></section>
+      <section className="hidden py-4"></section>
     </main>
   );
 };

@@ -15,14 +15,6 @@ type Props = {
   params: { slug: string };
 };
 
-// Prepare Next.js to know which routes already exist
-export const generateStaticParams = async () => {
-  // Important, use the plain Sanity Client here
-  const posts = await client.fetch(postPathsQuery);
-
-  return posts;
-};
-
 // Builder to generate metadata image from URL
 const builder = imageUrlBuilder(client);
 

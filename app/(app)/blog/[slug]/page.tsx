@@ -9,6 +9,7 @@ import { sanityFetch } from "@/sanity/lib/sanityFetch";
 import { client } from "@/sanity/lib/client";
 import imageUrlBuilder from "@sanity/image-url";
 import BlogSidebar from "../components/sidebar";
+import { revalidatePath } from "next/cache";
 
 type Props = {
   params: { slug: string };
@@ -47,6 +48,8 @@ const Page = async ({ params }: Props) => {
     query: postQuery,
     params: params,
   });
+
+  revalidatePath("/");
 
   return (
     <main className="px-44 grid grid-cols-4">

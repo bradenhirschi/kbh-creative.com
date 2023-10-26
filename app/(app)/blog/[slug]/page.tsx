@@ -1,4 +1,4 @@
-import { SanityClient, SanityDocument } from "@sanity/client";
+import { SanityDocument } from "@sanity/client";
 import BlogPost from "../components/post";
 import { postMetadataQuery, postPathsQuery } from "@/sanity/lib/queries";
 import { sanityFetch } from "@/sanity/lib/sanityFetch";

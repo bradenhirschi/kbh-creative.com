@@ -2,7 +2,7 @@ import Link from "next/link";
 import Image from "next/image";
 import type { SanityDocument } from "@sanity/client";
 import { sanityFetch } from "@/sanity/lib/sanityFetch";
-import { postsExceptCurrentQuery, postsQuery } from "@/sanity/lib/queries";
+import { postsQuery } from "@/sanity/lib/queries";
 import { client } from "@/sanity/lib/client";
 import imageUrlBuilder from "@sanity/image-url";
 

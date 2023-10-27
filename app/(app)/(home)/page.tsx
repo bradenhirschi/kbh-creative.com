@@ -8,7 +8,7 @@ const HomePage = () => {
   return (
     <main>
       {/* Hero section */}
-      <section className="grid grid-cols-1 lg:grid-cols-3 px-responsive min-h-[calc(100vh-80px)]">
+      <section className="grid grid-cols-1 lg:grid-cols-3 px-responsive min-h-[calc(100vh-80px)] py-4 lg:py-0">
         <div className="lg:col-span-2 lg:pr-20 py-10">
           <h1 className="stretched-heading">Elevate Your</h1>
           <h1 className="stretched-heading text-right w-full mb-12">
@@ -23,13 +23,13 @@ const HomePage = () => {
               loading="eager"
               className="rounded-lg"
             />
-            <div className="stamp bg-stone-200" />
-            <div className="stamp bg-lime-700/30 flex items-center justify-center">
+            <div className="hidden sm:block stamp bg-stone-200" />
+            <div className="hidden sm:flex stamp bg-lime-700/30 items-center justify-center">
               <Image src={lightbulb} alt="Lightbulb logo" />
             </div>
           </div>
         </div>
-        <div className="bg-stone-200 border-x border-black h-full pt-32 px-10">
+        <div className="border-y lg:border-y-0 bg-stone-200 border-x border-black h-full pt-32 py-6 px-10">
           <h2 className="uppercase font-semibold">
             With
             <br />

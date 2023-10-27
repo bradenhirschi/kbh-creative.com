@@ -3,8 +3,8 @@ import { HiOutlineMail } from "react-icons/hi";
 
 const ContactPage = () => {
   return (
-    <main className="py-28 px-60">
-      <section className="grid grid-cols-3 border border-black bg-stone-200">
+    <main className="py-28 px-responsive">
+      <section className="grid md:grid-cols-3 mx-auto border border-black bg-stone-200 max-w-4xl">
         <div className="bg-lime-700/30 m-2 p-4">
           <h4>Get in touch!</h4>
           <p className="mb-4">
@@ -15,7 +15,7 @@ const ContactPage = () => {
             <div className="ml-2">info@kbh-creative.com</div>
           </div>
         </div>
-        <div className="col-span-2">
+        <div className="md:col-span-2">
           <ContactForm />
         </div>
       </section>

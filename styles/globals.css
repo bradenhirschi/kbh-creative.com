@@ -28,7 +28,7 @@ h5 {
 }
 
 .btn {
-  @apply flex font-medium flex-row items-center bg-lime-700/30 p-5 rounded-full hover:bg-lime-700/60;
+  @apply flex font-medium flex-row items-center justify-center bg-lime-700/30 p-5 rounded-full hover:bg-lime-700/60;
 }
 
 .px-responsive {

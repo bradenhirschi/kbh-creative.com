@@ -25,8 +25,8 @@ const BlogSidebar = async ({
   }
 
   return (
-    <aside className="border-r border-stone-200">
-      <div className="grid grid-cols-1 divide-y divide-stone-200">
+    <aside className="border-r border-stone-200 sidebar">
+      <div className="grid grid-cols-1 divide-y last:border-b border-stone-200 divide-stone-200">
         <h3 className="p-4">Recent in the Blog</h3>
         {/* Most recent post */}
         <Link
@@ -47,7 +47,7 @@ const BlogSidebar = async ({
               height={180}
             />
           ) : null}
-          <h5 className="line-clamp-3">{posts[0].title}</h5>
+          <h5 className="line-clamp-3 mt-2">{posts[0].title}</h5>
         </Link>
         {/* List of next most recent posts */}
         {posts.splice(1).map((post) => (
@@ -70,7 +70,7 @@ const BlogSidebar = async ({
                 />
               ) : null}
             </div>
-            <p className="line-clamp-3">{post.title}</p>
+            <p className="line-clamp-4 overflow-hidden ml-2">{post.title}</p>
           </Link>
         ))}
       </div>
